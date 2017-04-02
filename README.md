@@ -5,47 +5,43 @@ versions in Linux and MacOS
 
 ## Getting Started
 
-Install on linux based machine only.
-Make sure bin/sh environment is enable
+Install on linux based machine only.  Make sure bin/sh environment is enable
 
 ### Prerequisites
 
-Update and install build-essentail
+1. Update dependencies and packages 
 
 ```
 sudo apt-get update
-sudo apt-get install build-essential libssl-dev 
+```
+
+2. Install curl 
+```
+sudo apt-get -y install apt-utils curl
 ```
 
 ### Installing
 
-Shortcut
+Script Installation
 ```
-./nvm.sh
-```
-
-Steps
-1. Import nvm
-
-```
-curl https://raw.githubusercontent.com/creationix/nvm/v0.33.1/install.sh | bash 
-source ~/.profile
+./rvm.sh
 ```
 
-2. View list of node versions
+Manual Installation 
+
+1. Install mpapis public key 
 ```
-nvm ls-remote
+gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
 ```
 
-3. Install specific version
+2. Install stable ruby version manager 
 ```
-nvm install v6.10.1
+curl -sSL https://get.rvm.io | bash -s stable --ruby
 ```
 
-4. *Optional* Make nodejs run on port 80
+3. Add permission to rvm to current user 
 ```
-sudo apt-get install libcap2-bin
-sudo setcap cap_net_bind_service=+ep `readlink -f \`which node\``
+usermod -aG rvm `id -un`
 ```
 
 ## Running the tests
@@ -54,11 +50,11 @@ None
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+None
 
 ## Built With
 
-* [creationix](https://raw.githubusercontent.com/creationix/) - The node version manager used
+None
 
 ## Contributing
 
@@ -70,7 +66,7 @@ None
 
 ## Authors
 
-* **Philip Sales** - *adopted work* - [creationix](https://raw.githubusercontent.com/creationix/) 
+* **Philip Sales** - *adopted work* - [Rvm.io](https://rvm.io/rvm/install/) 
 
 
 ## License
@@ -79,5 +75,5 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* Tim Caswell (Creationix)
+* RVM creators
 
