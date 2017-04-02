@@ -1,7 +1,7 @@
 # Project Title
 
 Ruby Version Manager Install Script - install script to manage ruby 
-versions in Linux and MacOS
+versions in Linux 
 
 ## Getting Started
 
