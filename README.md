@@ -1,6 +1,6 @@
 # Project Title
 
-Node Version Manager Install Script - install script to manage node.js
+Ruby Version Manager Install Script - install script to manage ruby 
 versions in Linux and MacOS
 
 ## Getting Started
@@ -77,3 +77,5 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 * RVM creators
 
+# rvm
+Ruby version manager installation script
