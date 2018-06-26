@@ -39,9 +39,24 @@ gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB8
 curl -sSL https://get.rvm.io | bash -s stable --ruby
 ```
 
-3. Add permission to rvm to current user 
+3. Add permission to rvm to current user (Linux only)
 ```
 usermod -aG rvm `id -un`
+```
+
+4. Select ruby versions
+```
+rvm list known
+```
+
+5. Install specific Version
+```
+rvm install ruby-2.4.2
+```
+
+6. Select a version as default
+```
+rvm use ruby-2.4.2 --default
 ```
 
 ## Running the tests
