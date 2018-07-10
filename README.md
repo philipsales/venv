@@ -1,6 +1,6 @@
 # Project Title
 
-Ruby Version Manager Install Script - install script to manage ruby 
+Python Version Manager Install Script - install script to manage python 
 versions in Linux 
 
 ## Getting Started
@@ -12,51 +12,42 @@ Install on linux based machine only.  Make sure bin/sh environment is enable
 1. Update dependencies and packages 
 
 ```
-sudo apt-get update
+sudo apt-get update \
+&& apt-get install -y software-properties-common curl \
+&& add-apt-repository ppa:deadsnakes/ppa \
+&& apt-get update \
+&& apt-get install -y python3.6 python3.6-venv
 ```
 
-2. Install curl 
+1. Manually Download specific python version
+
 ```
-sudo apt-get -y install apt-utils curl
+wget http://www.python.org/ftp/python/3.6.0/Python-3.6.0.tgz
+tar xzvf Python-3.6.0.tgz
+cd Python-3.6.0/
+./configure
+make
+sudo make install
 ```
 
 ### Installing
 
 Script Installation
 ```
-./rvm.sh
+./venv.sh
 ```
 
 Manual Installation 
 
-1. Install mpapis public key 
+
+1. Install python virtual env 
 ```
-gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+sudo apt-get install python-virtualenv
 ```
 
-2. Install stable ruby version manager 
+2. Create a specific version environment folder
 ```
-curl -sSL https://get.rvm.io | bash -s stable --ruby
-```
-
-3. Add permission to rvm to current user (Linux only)
-```
-usermod -aG rvm `id -un`
-```
-
-4. Select ruby versions
-```
-rvm list known
-```
-
-5. Install specific Version
-```
-rvm install ruby-2.4.2
-```
-
-6. Select a version as default
-```
-rvm use ruby-2.4.2 --default
+virtualenv --python=python3.6 python3.6.0_env 
 ```
 
 ## Running the tests
@@ -81,8 +72,7 @@ None
 
 ## Authors
 
-* **Philip Sales** - *adopted work* - [Rvm.io](https://rvm.io/rvm/install/) 
-
+* **Philip Sales** - *adopted work* 
 
 ## License
 
@@ -90,7 +80,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* RVM creators
+* venv creators
 
-# rvm
-Ruby version manager installation script
+# venv
+python version manager installation script
